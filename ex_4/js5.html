@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        * {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        body {
+            color: #212121;
+            margin: auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        ::placeholder {
+            color: #212121;
+            font-weight: 500;
+        }
+
+        input {
+            color: #212121;
+            background-color: white;
+            padding: 10px;
+            margin: 30px 20px;
+            width: 50%;
+            border: medium solid #212121;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            color: #212121;
+            background-color: #FAB702;
+            font-weight: 800;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="websiteForm" onsubmit="validateUrl()" method="post">
+        <label for="url-field">Enter the Url:</label><input id="url-field" name="url-field" type="url"
+            placeholder="http://www.example.com" required autofocus><br />
+        <input type="submit">
+    </form>
+    <script>
+        function validateUrl() {
+            var urlField = document.forms["websiteForm"]["url-field"];
+            if (urlField.value.startsWith("http://")) {
+                window.alert("Website submitted successfully");
+                return true;
+            }
+            else {
+                window.alert("Url should start with http://");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

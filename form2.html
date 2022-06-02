@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="form-validate.js"></script>
+</head>
+
+<body>
+    <form name="bioDataForm" onsubmit="return validateForm()" method="post">
+        <fieldset id="personalInformation">
+            <legend>Personal Information</legend>
+            <input name="name" type="text" placeholder="Enter your name" autofocus required><br />
+            <input name="number" type="tel" placeholder="Enter your phone number" minlength="10" maxlength="10"
+                required><br />
+            <input name="email" type="email" placeholder="Enter your email" required><br />
+            <input name="password" type="password" placeholder="Set your password" required><br />
+            <input name="confirmpassword" type="password" placeholder="Confirm password" required><br />
+            <input name="age" type="number" placeholder="Age" min="0" max="120" required><br />
+            <label for="gender">
+                Enter your Gender:&nbsp
+            </label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer Not to Say">Prefer not to say</option>
+            </select><br />
+        </fieldset>
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="dob">Enter your date of birth</label>
+            <input id="dob" name="dob" type="date"><br />
+            <label for="website">Enter your personal website</label>
+            <input id="website" name="website" type="url" placeholder="https://www.personal-website.com"><br />
+            <label for="profilepic">Upload your profile picture</label>
+            <input id="profilepic" name="profilepic" type="file" accept="image/*"><br />
+            <label for="favcolor">Pick your favorite color</label>
+            <input id="favcolor" name="favcolor" type="color"><br /><br />
+            The Salary you earn per month<br />
+            <input id="1-lpa" name="salary" value="1-" type="radio" checked>
+            <label for="1-lpa">Below 1 lakh</label>
+            <input id="1-5lpa" name="salary" value="1-5" type="radio">
+            <label for="1-5lpa">1-5 lakhs per annum</label>
+            <input id="5-10lpa" name="salary" value="5-10" type="radio">
+            <label for="5-10lpa">5-10 lakhs per annum</label>
+            <input id="10+lpa" name="salary" value="10+" type="radio">
+            <label for="10+lpa">Above 10 lakhs</label>
+        </fieldset><br />
+        <label for="satisfactionrange">How Satisfied are you with our form?</label><br />
+        <input id="satisfactionrange" name="satisfactionrange" type="range" value="0" min="0" max="100"><br />
+        <label for="feedback">Feedback</label><br />
+        <textarea id="feedback" name="feedback" rows="5" cols="50"
+            placeholder="Do you have any feedback for us?"></textarea><br />
+        <input id="toc" name="toc" type="checkbox">Accept the <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank">terms and
+            conditions</a><br />
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+
+</html>

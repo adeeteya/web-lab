@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition</title>
+    <style>
+        * {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        body {
+            color: #212121;
+            background-color: #FAB702;
+            margin: auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        ::placeholder {
+            color: #212121;
+            font-weight: 500;
+        }
+
+        input {
+            width: 50%;
+            margin: 20px;
+            padding: 10px;
+            background-color: #FAB702;
+            border: medium solid #212121;
+            border-radius: 8px;
+        }
+
+        input:focus {
+            border: medium solid white;
+        }
+
+        .add-btn {
+            margin-top: 20px;
+            width: 50%;
+            padding: 10px;
+            color: #212121;
+            background-color: white;
+            border: medium solid white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            color: white;
+            background-color: #212121;
+            border: medium solid #212121;
+            border-radius: 8px;
+        }
+
+        #result {
+            margin-top: 20%;
+            font-size: 2em;
+            font-weight: 800;
+        }
+    </style>
+    <script>
+        function add(n1, n2) {
+            var sum = Number(n1) + Number(n2);
+            document.getElementById("result").innerHTML = n1 + " + " + n2 + " = " + sum;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Addition</h1>
+    <form name="additionForm" onsubmit="add(n1.value,n2.value);return false;" method="post">
+        <input id="n1" type="number" placeholder="Enter the first number" required>
+        <input id="n2" type="number" placeholder="Enter the first number" required>
+        <br />
+        <button type="submit" class="add-btn">Add</button>
+    </form>
+    <div id="result">
+    </div>
+</body>
+
+</html>

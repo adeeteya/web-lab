@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+        * {
+            color: #212121;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2 {
+            font-weight: 900;
+        }
+
+        input {
+            width: 20%;
+            padding: 10px 16px;
+            margin: 10px 0px;
+            border: light solid #212121;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background-color: #FAB700;
+            width: 20%;
+            padding: 1px 16px 20px 16px;
+            line-height: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="">
+        <h1>Simple Calculator</h1>
+        <input type="number" ng-model="n1" placeholder="Enter the first number"><br />
+        <input type="number" ng-model="n2" placeholder="Enter the second number">
+        <div class="result-box" ng-show="n1 && n2">
+            <h2>Result</h2>
+            {{ n1 }} + {{ n2 }} = {{ n1+n2 }}<br />
+            {{ n1 }} - {{ n2 }} = {{ n1-n2 }}<br />
+            {{ n1 }} * {{ n2 }} = {{ n1*n2 }}<br />
+            {{ n1 }} / {{ n2 }} = {{ n1/n2 | number }}<br />
+            {{ n1 }} % {{ n2 }} = {{ n1%n2 }}<br />
+        </div>
+    </div>
+</body>
+</html>

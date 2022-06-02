@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter and Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        * {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        body {
+            color: #212121;
+            background-color: #FAB702;
+            text-align: center;
+            line-height: 3em;
+        }
+        input {
+            width: 30%;
+            margin: 20px;
+            padding: 10px;
+            background-color: #FAB702;
+            border: medium solid #212121;
+            border-radius: 8px;
+        }
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h1>Students List</h1>
+    <div ng-controller="myController">
+        <input type="text" ng-model="search" placeholder="search"><br />
+        <ul>
+            <li ng-repeat="student in studentsList | orderBy: 'name' | filter:search">{{ student.name }}</li>
+        </ul>
+    </div>
+    <script>
+        let myApp = angular.module("myApp", []);
+        myApp.controller("myController", function ($scope) {
+            $scope.studentsList = [
+                { name: "Arman Cotton" },
+                { name: "Shanay Johns" },
+                { name: "Jayden Wheatley" },
+                { name: "Amber Tucker" },
+                { name: "Alia Beaumont" },
+                { name: "Natan Daniels" },
+                { name: "Chanice Barry" },
+                { name: "Lucille Hanson" },
+                { name: "Rhys Redmond" },
+                { name: "Shelley Bolton" },
+                { name: "Gregor Weston" },
+                { name: "Jobe Mcmillan" },
+                { name: "Roan Hahn" },
+                { name: "Vickie Mcgregor" },
+                { name: "Asiyah Lin" },
+                { name: "Everett Dejesus" },
+                { name: "Dotty Adam" },
+                { name: "Aubree Dolan" },
+                { name: "Komal Pittman" },
+                { name: "Sanjay Mccann" }
+            ]
+        });
+    </script>
+</body>
+
+</html>

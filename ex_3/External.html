@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Styles</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width == "30%") {
+                sidebar.style.width = "0";
+                document.getElementById("sidebar-icon").innerHTML = "&#9776;";
+            } else {
+                sidebar.style.width = "30%";
+                document.getElementById("sidebar-icon").innerHTML = "&times;";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <span id="sidebar-icon" onclick="toggleSidebar()">&#9776;</span>
+    <div id="sidebar">
+        <h1>Sidebar</h1>
+        <p>
+            A website sidebar is a unique, creative, and useful component of website navigation design.
+            In most cases it is a column with typography, color palette, or icons and appears by the side of the main
+            content - either on the left or on the right, depending on the website layout and structure.
+        </p>
+    </div>
+    <div id="main-content">
+        <h1>External Style Sheets</h1>
+        <p>
+            To apply a rule to multiple pages, an external style sheet is used.
+            An <span class="highlighted-text">external style sheet</span> is a separate CSS file that can be accessed
+            by creating a link within the head
+            section of the webpage.
+        </p>
+        <p>
+            Multiple webpages can use the same link to access the stylesheet.The link to an <span
+                class="highlighted-text">external style sheet</span> is
+            placed within the head section of the page.
+        </p>
+        <span class="highlighted-text">External style sheets</span> have the following advantages over internal and
+        inline styles:
+        <ul>
+            <li>One change to the style sheet will change all linked pages</li>
+            <li>You can create classes of styles that can then be used on many different HTML elements</li>
+            <li>Consistent look and feel across multiple web pages</li>
+            <li>Improved load times because the css file is downloaded once and applied to each relevant page as needed
+            </li>
+        </ul>
+        To learn more about <span class="highlighted-text">external stylesheets</span> <a
+            href="https://www.javatpoint.com/external-css" target="_blank">click
+            here</a>.
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Elements</title>
+    <style>
+        * {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        body {
+            color: #FAB702;
+            background-color: #212121;
+            margin: auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 2em;
+        }
+
+        button {
+            color: white;
+            background-color: #FAB702;
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input {
+            color: white;
+            background-color: #212121;
+            padding: 10px;
+            margin: 30px 20px;
+            width: 15%;
+            border: medium solid white;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: inline;
+        }
+
+        .input-with-icon span {
+            position: relative;
+            left: 65px;
+            padding: 9px 8px;
+        }
+
+        .input-with-icon input {
+            padding-left: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dom Manipulation</h1>
+    <button onclick="insertElement()">Insert</button>
+    <button onclick="deleteElement()">Delete</button><br />
+    <div class="input-with-icon">
+        <span>&#128269;</span>
+        <input id="n1" name="n1" type="number">
+    </div>
+    <button onclick="searchElement(Number(n1.value))">Search</button><br />
+    <ul id="elementList">
+    </ul>
+    <script>
+        var count = 0;
+        function insertElement() {
+            count++;
+            const node = document.createElement("li");
+            const textNode = document.createTextNode(count);
+            node.appendChild(textNode);
+            document.getElementById("elementList").appendChild(node);
+        }
+        function deleteElement() {
+            const node = document.getElementById("elementList");
+            if (node.hasChildNodes) {
+                node.removeChild(node.lastChild);
+                count--;
+                if (count == -1) count = 0;
+            }
+        }
+        function searchElement(n1) {
+            const node = document.getElementById("elementList");
+            if (count >= n1 && n1 > 0) {
+                window.alert("Element is present");
+            }
+            else {
+                window.alert("Element is not present");
+            }
+        }
+    </script>
+</body>
+
+</html>

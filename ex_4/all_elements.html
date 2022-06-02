@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List all elements</title>
+</head>
+
+<body>
+    <h1>Heading h1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sagittis augue ut tempor porta. Ut ullamcorper
+        viverra euismod. Phasellus eu odio purus. Etiam dapibus sit amet massa id eleifend. Suspendisse dapibus
+        tincidunt consequat. Vivamus dictum leo quis ipsum tempor, et pellentesque augue tempus. Etiam quis elementum
+        enim. In venenatis lectus tincidunt, suscipit ante at, malesuada justo. Maecenas congue dui rutrum rhoncus
+        varius. Maecenas eget sollicitudin diam. Pellentesque sed fermentum ligula, in pharetra metus. Quisque pharetra
+        hendrerit magna sed fringilla.
+    </p>
+    <script>
+        var nodesList = [];
+        document.querySelectorAll("*").forEach(function (node) {
+            nodesList.push(node.nodeName);
+        });
+        window.alert("All the elements are: " + nodesList);
+    </script>
+</body>
+
+</html>

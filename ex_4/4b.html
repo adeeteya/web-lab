@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        * {
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        body {
+            color: #212121;
+            background-color: #FAB702;
+            margin: auto;
+            text-align: center;
+            width: 50%;
+        }
+
+        ::placeholder {
+            color: #212121;
+            font-weight: 500;
+        }
+
+        input {
+            width: 50%;
+            margin: 20px;
+            padding: 10px;
+            background-color: #FAB702;
+            border: medium solid #212121;
+            border-radius: 8px;
+        }
+
+        input:focus {
+            border: medium solid white;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            width: 50%;
+            padding: 10px;
+            color: #212121;
+            background-color: white;
+            border: medium solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 900;
+        }
+
+        input[type="submit"]:hover {
+            color: white;
+            background-color: #212121;
+            border: medium solid #212121;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Log In to the Chat Rooms</h1>
+    <form name="loginForm" onsubmit="validateForm();return false;" method="post">
+        <input id="username" name="username" type="text" placeholder="Enter your username" required><br />
+        <input id="email" name="email" type="email" placeholder="Enter your email address (@chatroom.com)" required
+            pattern=".+@chatroom\.com"><br />
+        <input id="password" name="password" type="password" placeholder="Enter your password" minlength="6"
+            maxlength="20" required><br />
+        <input type="submit">
+    </form>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"];
+            var email = document.forms["loginForm"]["email"];
+            var password = document.forms["loginForm"]["password"];
+            var regUsername = /^[a-z\d]{5,12}$/i;
+            var regPassword = /^[#\w@_-]{6,20}$/;
+            if (!regUsername.test(username.value)) {
+                window.alert("Username must be between 5 to 12 characters and should be only lowercase.");
+                return false;
+            }
+            else if (!regPassword.test(password.value)) {
+                window.alert("Password can only contain @, _ and -");
+                return false;
+            }
+            else {
+                window.alert("Logged In successfully");
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
