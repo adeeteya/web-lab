@@ -5,19 +5,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Demonstration</title>
+    <meta name="author" content="Aditya R">
+    <title>Html Demonstration</title>
+    <style>
+        li {
+            font-size: 1.2em;
+        }
+        a{
+            color:blue;
+        }
+    </style>
 </head>
 
 <body>
-    <p style="font-size: 2em;color:red;">
-        An <em>inline</em> style may be used to apply a unique style for a single element.
-        To use <em>inline</em> styles, add the style attribute to the relevant element.
-        The style attribute can contain any CSS property.
-        <em>Inline CSS</em> is considered useful as it reduces the number of files that the browser needs to download before
-        displaying the web page.
-        With an external CSS, the browser first loads an HTML file and then downloads the CSS file.
-        With an <em>inline CSS</em>, you just need to download one HTML file instead of 2, making the process faster.
-    </p>
+    <a id="top"></a>
+    The HTML <b>bold element</b> defines bold text, without any extra importance. While the <strong>strong
+        element</strong> defines text with strong importance.The content inside a strong element is typically displayed
+    in bold.<br />
+    Whenever a technical term, a phrase from another language, a thought, etc (usually the part of text in alternate
+    voice/mood) have to be displayed they are usually displayed in <i>italics</i>.<br />
+    The HTML <em>emphasis element</em> defines emphasized text. The content inside is typically displayed in italic.
+    Even Screen readers would pronounce the words with an emphasis, using verbal stress.<br />
+    The HTML <small>small element</small> defines smaller text.<br />
+    The HTML <mark>mark element</mark> defines text that should be marked or highlighted.<br />
+    The HTML <del>deleted element</del> defines text that has been deleted from a document.Browsers will usually strike
+    a line through deleted text.<br />
+    The HTML <ins>inserted element</ins> defines a text that has been inserted into a document.Browsers will usually
+    underline inserted text.<br />
+    Whenever a chemical formulae has to be displayed a <sub>Subscript</sub> Text could be used. For Eg:-
+    H<sub>2</sub>O<br />
+    Whenever footnotes or Powers of a mathematical equation has to be expressed <sup>Superscript</sup>Text could be
+    used.
+    For Eg:- NxNxN=N<sup>3</sup><br />
+    <h2>Time Table</h2>
+    <table border="5px" cellpadding="10" cellspacing="1">
+        <tr>
+            <th rowspan="2">Day/Time</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+        </tr>
+        <tr>
+            <td>8:15-9:15</td>
+            <td>9:15-10:15</td>
+            <td>10:30-11:30</td>
+            <td>11:30-12:20</td>
+            <td>12:20-1:20</td>
+            <td>1:20-1:30</td>
+            <td>1:30-2:30</td>
+            <td>2:30-3:30</td>
+        </tr>
+        <tr>
+            <th>MON</th>
+            <td>PCD-L</td>
+            <td>BDE</td>
+            <td>OE</td>
+            <td>Lunch</td>
+            <td>WP</td>
+            <td>Break</td>
+            <td colspan="2" align="center">English Lab</td>
+        </tr>
+        <tr>
+            <th>TUES</th>
+            <td>WP</td>
+            <td>ML-L</td>
+            <td>PCD-L</td>
+            <td>Lunch</td>
+            <td colspan="4" align="center">WP Lab</td>
+        </tr>
+        <tr>
+            <th>WED</th>
+            <td>OE</td>
+            <td>PCD-L</td>
+            <td>ML-L</td>
+            <td>Lunch</td>
+            <td>ISD</td>
+            <td colspan="3" align="center">PCD/ML-P</td>
+        </tr>
+        <tr>
+            <th>THURS</th>
+            <td>ML-L</td>
+            <td>ISD</td>
+            <td colspan="2" align="center">PCD/ML-P</td>
+            <td colspan="2" align="center">Lunch</td>
+            <td>BDE</td>
+            <td>Mentor</td>
+        </tr>
+        <tr>
+            <th>FRI</th>
+            <td>BDE</td>
+            <td>WP</td>
+            <td>ISD</td>
+            <td>Lunch</td>
+            <td>WP Lab</td>
+            <td>Break</td>
+            <td>OE</td>
+            <td>Club</td>
+        </tr>
+    </table>
+    <h2>Images and Map</h2>
+    <img src="shapes.png" alt="Basic Shapes" width="540px" height="370px" usemap="#shapesmap">
+    <map name="shapesmap">
+        <area shape="circle" coords="149,84,60" alt="Circle" href="https://en.wikipedia.org/wiki/Circle"
+            target="_blank">
+        <area shape="rect" coords="343,18,472,146" alt="Square" href="https://en.wikipedia.org/wiki/Square"
+            target="_blank">
+        <area shape="rect" coords="80,220,215,320" alt="Rectangle" href="https://en.wikipedia.org/wiki/Rectangle"
+            target="_blank">
+        <area shape="poly" coords="407,195,345,322,470,323" alt="Triangle" href="https://en.wikipedia.org/wiki/Triangle"
+            target="_blank">
+    </map>
+    <br />
+    <h2>Top 5 Richest People in the world</h2>
+    <ol>
+        <li>Elon Musk</li>
+        <li>Bernard Arnault</li>
+        <li>Jeff Bezos</li>
+        <li>Bill Gates</li>
+        <li>Gautam Adani</li>
+    </ol>
+    <h2>List of Popular Mobile Operating Systems</h2>
+    <ul>
+        <li>Android</li>
+        <li>iOS</li>
+        <li>Windows</li>
+        <li>Linux</li>
+    </ul><br/>
+    <a href="#top">Go to Top</a>
 </body>
 
 </html>
