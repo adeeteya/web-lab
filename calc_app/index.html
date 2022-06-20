@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body ng-app="calculatorApp" ng-controller="calculatorController">
+    <h1>Calculator App</h1>
+    <input type="number" placeholder="Enter the first number" ng-model="first"><br />
+    <select ng-model="operatorUrl">
+        <option value="/add">+</option>
+        <option value="/subtract">-</option>
+        <option value="/multiply">*</option>
+        <option value="/divide">/</option>
+    </select><br />
+    <input type="number" placeholder="Enter the second number" ng-model="second"><br />
+    <button ng-click="calculateResult();">Calculate</button><br />
+    <span ng-show="result">The result is: {{result}}</span>
+</body>
+<script>
+    var app = angular.module("calculatorApp", []);
+    app.controller("calculatorController", function ($scope, $http) {
+        $scope.calculateResult = function () {
+            $http.get($scope.operatorUrl, {
+                params: { first: $scope.first, second: $scope.second }
+            }).then(function (res) {
+                $scope.result = res.data.result;
+            });
+        };
+    });
+</script>
+
+</html>

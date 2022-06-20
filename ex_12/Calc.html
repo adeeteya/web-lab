@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <center>
+        <h3 id='bordering' style="background-color:peachpuff; width: 300px;">SIMPLE CALCULATOR</h3>
+        <div ng-app="CalculatorApp" ngcontroller="CalculatorController" id='bordering'
+            style="background-color:peachpuff;width: 300px">
+            <p>Operand 1</p>
+            <p><input type="number" ng-model="first"></p>
+            <p>Operand 2</p>
+            <p><input type="number" ng-model="second"></p>
+            <p>Choose operation</p>
+            <p><select ng-model="operator">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select></p>
+            <button ng-click="calculate()">CALCULATE</button>
+            <p>ANSWER</p>
+            <p ng-model="answer">{{answer}}</p>
+        </div>
+    </center>
+    <script>
+        angular.module('CalculatorApp', [])
+            .controller('CalculatorController', function ($scope, $http) {
+                $scope.calculate = function () {
+                    ops = "/" + $scope.operator;
+                    $http.get(ops,
+                        {
+                            params: {
+                                first: $scope.first,
+                                second: $scope.second
+                            }
+                        }).success(function (res) {
+                            console.log('Exit status ' + JSON.stringify(res));
+                            $scope.answer = res.result;
+                        });
+                };
+            });
+    </script>
+</body>
+
+</html>
