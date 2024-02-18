@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Time</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body ng-app="timeApp">
+    <div ng-controller="timeController" ng-show="time">
+        The Current Time is:<br />
+        {{ time }}
+    </div>
+    <script>
+        var timeApp = angular.module("timeApp", []);
+        timeApp.controller("timeController", function ($scope, $interval) {
+            $interval(function () {
+                var date = new Date();
+                $scope.time = date.toLocaleTimeString();
+            }, 1000);//called every 1 second
+        });
+    </script>
+</body>
+
+</html>

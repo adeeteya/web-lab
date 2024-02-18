@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Systems</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        let myApp = angular.module("myApp", []);
+        myApp.filter("bin", function () {
+            return function (input) {
+                return Number(input).toString(2);
+            }
+        });
+        myApp.filter("octa", function () {
+            return function (input) {
+                return Number(input).toString(8);
+            }
+        });
+        myApp.filter("hexa", function () {
+            return function (input) {
+                return Number(input).toString(16);
+            }
+        });
+    </script>
+</head>
+
+<body ng-app="myApp">
+    <div>
+        <input type="number" ng-model="n" placeholder="Enter a number"><br />
+        <h2 ng-show="n">Hexa-Decimal: {{ n | hexa }}</h2>
+        <h2 ng-show="n">Decimal: {{ n }}</h2>
+        <h2 ng-show="n">Octal: {{ n | octa }}</h2>
+        <h2 ng-show="n">Binary: {{ n | bin }}</h2>
+    </div>
+</body>
+
+</html>

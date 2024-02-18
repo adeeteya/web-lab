@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript practice</title>
+    <script>
+        function getTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+            setTimeout(function () { getTime() }, 1000);
+        }
+        window.onload = function () { getTime(); }
+    </script>
+</head>
+
+<body>
+    <span id="clock"></span>
+</body>
+
+</html>

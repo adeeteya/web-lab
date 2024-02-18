@@ -1,22 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="angular-prac.js"></script>
+    <title>angular.bootstrap()</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
-<body ng-app="myApp">
-    <div ng-controller="myController">
-        <input type="text" ng-model="search" placeholder="search"><br />
-        <ul>
-            <li ng-repeat="iterator in namesList | orderBy: 'name' | filter:search">{{ iterator.name }}</li>
-        </ul>
+<body ng-app="app" style="text-align:Center">
+    <h1 style="color:blue">Bootstrap</h1>
+    <h2>angular.bootstrap()</h2>
+    <div ng-controller="Bootstrap">
+        <div class="col-md-3 well" ng-init="count=0">
+            Rock:
+            <input type="radio" ng-model="Music" value="Rock" ng-change="layout(Music)" />
+            Metal:
+            <input type="radio" ng-model="Music" value="Metal" ng-change="layout(Music)" />
+            <pre><b>You selected:</b> {{result}} </pre>
+        </div>
     </div>
+    <script>
+        var app = angular.module("app", []);
+        app.controller('Bootstrap', ['$scope', function ($scope) {
+            $scope.layout = function (Music) {
+                $scope.result = Music;
+            }
+        }]);
+        angular.bootstrap(document, ['app']);
+    </script>
 </body>
 
 </html>
